@@ -1,0 +1,200 @@
+<html>
+<head>
+<!-- OneTrust Cookies Consent Notice start for toyota.co.th -->
+
+ <!--OneTrust AutoBlock Script Start -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/0191214a-3413-7104-953d-4dbe5584a618-test/OtAutoBlock.js" ></script> 
+<!--OneTrust AutoBlock Script End -->
+
+<!--OneTrust Main Cookie Script Start -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="0191214a-3413-7104-953d-4dbe5584a618-test" ></script>
+<!--OneTrust Main Cookie Script End -->
+
+
+<script type="text/javascript">
+    function getCookie(a) {
+        var b = "; " + document.cookie;
+        a = b.split("; " + a + "\x3d");
+        if (2 == a.length) return a.pop().split(";").shift()
+    }
+
+    function OptanonWrapper() {
+        // Select HTML elements and apply conditional display based on consent
+        var a = document.getElementsByClassName("gdpr-info-box")[0]; - 1 < window.OnetrustActiveGroups.indexOf(",C0004,") || (a.style.cssText = "display: flex; flex-direction: column");
+        var v = document.querySelector('#youtubeVideoDiv iframe'); -1 < window.OnetrustActiveGroups.indexOf(",C0004,") || (v.style.display = "none");
+        b = "OptanonAlertBoxClosed";
+        // Banner 'Accept All' CTA
+        var x = document.getElementById("onetrust-accept-btn-handler");
+        // Preference Center 'Accept All' and 'Save Settings'
+        var y = document.getElementById("accept-recommended-btn-handler"),
+            z = document.getElementsByClassName("save-preference-btn-handler onetrust-close-btn-handler")[0];
+        b = getCookie(b);
+
+        // Page reload after consent confirmed
+        !b && a && x.addEventListener("click",
+            function() {
+                location.reload()
+            });
+        y && y.addEventListener("click", function() {
+            location.reload()
+        });
+        z.addEventListener("click", function() {
+            location.reload()
+        })
+    };
+</script>
+<!-- OneTrust Cookies Consent Notice end for toyota.co.th -->
+</head>
+
+<body>
+	
+<!-- CONTEXTUAL CONSENT FOR YOUTUBE START -->
+
+ <div id="youtubeVideoDiv">
+  <!-- CONTEXTUAL CONSENT / placeholder DIV -->
+  <div class="gdpr-info-box js-data-gdpr-not-available-placeholder" id="youtubePlaceholder" style="display: none;">
+    
+    <!-- Black overlay behind text -->
+    <div class="black-overlay"></div>
+    
+    <!-- Text and button container -->
+      <div class="overlay-text">
+        <div id="ot-warning-text">
+          <p class="title" id="warning-title"></p>
+          <p class="desc" id="warning-desc"></p>
+        </div>
+        <div id="ot-settings-btn">
+          <a class="btn btn-tertiary" id="cookie-btn" onclick="OneTrust.ToggleInfoDisplay()"></a>
+        </div>
+      </div>
+    </div>
+
+  <!-- YouTube Video START -->
+  <iframe width="560" height="315" class="optanon-category-C0004 embed-responsive-item" data-src="https://www.youtube.com/embed/3GA0VulBgn8?si=wheGlhbXyUv5L8wU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <!-- YouTube Video END -->
+</div>
+
+<style>
+/* Main container for the YouTube video */
+#youtubeVideoDiv {
+    position: relative;
+    width: 560px;
+    height: 315px;
+    background-color: #f2f2f2; /* Fallback background */
+}
+
+/* Placeholder container with the background image */
+.gdpr-info-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('/images/background.png'); /* Your uploaded image */
+    background-size: cover; /* Ensure it covers the entire container */
+    background-position: center;
+    z-index: 1;
+}
+
+/* Black overlay to darken the background */
+.black-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent black */
+    z-index: 2; /* Ensure it stays above the background image */
+}
+
+/* Text and button container */
+.overlay-text {
+    position: relative;
+    z-index: 3; /* Make sure text is above the black overlay */
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional darker background behind text */
+    border-radius: 5px;
+}
+
+/* Title styling */
+#ot-warning-text .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white; /* Ensure white text for readability */
+}
+
+/* Description styling */
+#ot-warning-text .desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: white; /* Ensure white text for readability */
+}
+
+/* Button styling */
+#ot-settings-btn .btn {
+    background-color: #eb081e; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#ot-settings-btn .btn:hover {
+    background-color: #ff7878; /* Hover color */
+}
+</style>
+
+<!-- JAVASCRIPT FOR CHANGING LANGUAGE BASED ON WEBSITE LANGUAGE-->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Detect the language from the <html lang="..."> attribute
+    var pageLang = document.documentElement.lang || 'en'; // Default to English if no lang attribute is present
+
+    // Define translations for the placeholder text
+    var translations = {
+        en: {
+            title: "We're sorry, this content is unavailable.",
+            desc: "To improve your experience, make sure Targeting cookies are enabled.",
+            btn: "Update your cookie settings"
+        },
+        th: {
+            title: "ขออภัย เนื้อหานี้ไม่สามารถใช้งานได้",
+            desc: "เพื่อปรับปรุงประสบการณ์ของคุณ โปรดเปิดใช้งานคุกกี้ที่ตั้งเป้าหมาย",
+            btn: "อัปเดตการตั้งค่าคุกกี้ของคุณ"
+        },
+        fr: {
+            title: "Nous sommes désolés, ce contenu est indisponible.",
+            desc: "Pour améliorer votre expérience, assurez-vous que les cookies de ciblage sont activés.",
+            btn: "Mettre à jour vos paramètres de cookies"
+        }
+        // Add other languages here
+    };
+
+    // Get the correct translation based on the detected language
+    var langContent = translations[pageLang] || translations['en']; // Fallback to English if language is not supported
+
+    // Update the text content dynamically
+    document.getElementById("warning-title").textContent = langContent.title;
+    document.getElementById("warning-desc").textContent = langContent.desc;
+    document.getElementById("cookie-btn").textContent = langContent.btn;
+});
+</script>
+<!-- JAVASCRIPT FOR CHANGING LANGUAGE OF CONTEXTUAL WARNING -->
+<!-- CONTEXTUAL CONSENT FOR YOUTUBE END -->
+
+</br>
+<!-- OneTrust Cookies Settings button start -->
+<button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
+<!-- OneTrust Cookies Settings button end -->
+
+</body>
+
+</html>
