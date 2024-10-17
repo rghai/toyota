@@ -9,7 +9,11 @@
 		}
 	};
 </script>
-	
+<script>
+		    document.addEventListener("OneTrustGroupsUpdated", setTimeout(function() {
+        window.location.reload();
+    }, 1000);)
+			    </script>
 <!-- OneTrust Cookies Consent Notice start for toyota.co.th -->
 
  <!--OneTrust AutoBlock Script Start -->
@@ -41,17 +45,20 @@
         b = getCookie(b);
 
         // Page reload after consent confirmed
-        !b && a && x.addEventListener("click",
-            function() {
-                location.reload()
-            });
-        y && y.addEventListener("click", function() {
-            location.reload()
-        });
-        z.addEventListener("click", function() {
-            location.reload()
-        });
-    };
+        //!b && a && x.addEventListener("click",
+          //  function() {
+            //    location.reload()
+           // });
+    //    y && y.addEventListener("click", function() {
+  //          location.reload()
+   //     });
+   //     z.addEventListener("click", function() {
+    //        location.reload()
+   //     });
+  //  };
+
+
+	    
 </script>
 <!-- OneTrust Cookies Consent Notice end for toyota.co.th -->
 </head>
