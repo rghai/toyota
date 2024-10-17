@@ -42,15 +42,15 @@
 
         // Page reload after consent confirmed
         !b && a && x.addEventListener("click",
-            function() {
-                location.reload()
-            });
-        y && y.addEventListener("click", function() {
-            location.reload()
-        });
-        z.addEventListener("click", function() {
-            location.reload()
-        })
+            setTimeout(function() {
+                location.reload();
+            },1000));
+        y && y.addEventListener("click", setTimeout(function() {
+            location.reload();
+        },1000));
+        z.addEventListener("click", setTimeout(function() {
+            location.reload();
+        },1000));
     };
 </script>
 <!-- OneTrust Cookies Consent Notice end for toyota.co.th -->
