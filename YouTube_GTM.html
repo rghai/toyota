@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WZT73HM8');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZT73HM8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+<button id="toggle-lang">Switch to English</button>
+
+ <script>
+        const button = document.getElementById('toggle-lang');
+        const htmlTag = document.documentElement;
+
+        // Check localStorage for saved language preference
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) {
+            htmlTag.setAttribute('lang', savedLang);
+            button.textContent = savedLang === 'th' ? 'Switch to English' : 'Switch to Thai';
+        }
+
+        // Add click event to toggle language
+        button.addEventListener('click', () => {
+            const currentLang = htmlTag.getAttribute('lang');
+            const newLang = currentLang === 'th' ? 'en' : 'th';
+
+            // Update the lang attribute and button text
+            htmlTag.setAttribute('lang', newLang);
+            button.textContent = newLang === 'th' ? 'Switch to English' : 'Switch to Thai';
+
+            // Save the new language preference to localStorage
+            localStorage.setItem('lang', newLang);
+
+              // Notify OneTrust of the language change
+        if (typeof Optanon !== 'undefined' && typeof Optanon.changeLanguage === 'function') {
+            Optanon.changeLanguage(newLang);
+            console.log(`Optanon language changed to: ${newLang}`);
+        } else {
+            console.warn('Optanon.changeLanguage is not available.');
+        }
+        });
+    </script>
+
+    <!-- Static Video -->
+    </br>
+    Static Videos
+    </br>
+    <!-- Static Video -->
+<div class="youtube-video-container">
+    <iframe
+        class="optanon-category-C0004 embed-responsive-item"
+        data-src="https://www.youtube-nocookie.com/embed/3GA0VulBgn8?si=wheGlhbXyUv5L8wU"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+<div class="youtube-video-container">
+    <iframe
+        class="optanon-category-C0004"
+        data-src="https://www.youtube-nocookie.com/embed/MJkZ0oopTwM?si=mjLX3dS-9LipUPfn"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+    <!-- Placeholder for GTM-Pushed Videos -->
+</br>
+GTM-Pushed Videos
+</br>
+    <div class="youtube-video-container" id="youtube-video-placeholder"></div>
+
+    <!-- OneTrust Cookie Settings Button -->
+    <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
+</body>
+</html>
