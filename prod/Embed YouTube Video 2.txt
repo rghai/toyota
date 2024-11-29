@@ -1,0 +1,11 @@
+<script>
+  try {
+    var placeholder = document.getElementById('youtube-video-placeholder1');
+    if (placeholder) {
+      placeholder.innerHTML = 
+        '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yU3U1kvqUB8?si=KEHvkHBGm8aXb_lF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    }
+  } catch (error) {
+    console.error("Error initializing YouTube video:", error);
+  }
+</script>

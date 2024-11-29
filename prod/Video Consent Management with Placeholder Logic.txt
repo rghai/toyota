@@ -1,0 +1,142 @@
+<style>
+/* Main container for YouTube videos */
+.youtube-video-container {
+    position: relative;
+    width: auto; /* Allow developer-defined width */
+    height: auto; /* Allow developer-defined height */
+    aspect-ratio: 16 / 9; /* Maintain a standard 16:9 aspect ratio */
+    background-color: #f2f2f2; /* Fallback color */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+/* Placeholder container */
+.pdpa-info-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Matches the container width */
+    height: 100%; /* Matches the container height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://www.toyota.co.th/media/product/series/v/474/lead/bdb3d9564fe67fe9eb6ef4b074547d6e71899f72dea91f23aa04b28eff200ba0.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Placeholder overlay text and button container */
+.overlay-text {
+    z-index: 2;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.overlay-text .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.overlay-text .desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.overlay-text .btn {
+    background-color: #eb081e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.overlay-text .btn:hover {
+    background-color: #ff7878;
+}
+
+/* Ensure iframe fills the container if no developer overrides */
+.youtube-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Default to fill the container */
+    height: 100%; /* Default to fill the container */
+    border: none; /* Remove iframe borders */
+}
+</style>
+
+<script>
+function OptanonWrapper() {
+    function handleYouTubeConsent() {
+        document.querySelectorAll(".youtube-video-container").forEach(function (container) {
+            var iframe = container.querySelector("iframe");
+            if (iframe) {
+                processVideoConsent(container, iframe);
+            } else {
+                forcePlaceholder(container);
+            }
+        });
+    }
+
+    function processVideoConsent(container, iframe) {
+        var consentGroups = window.OnetrustActiveGroups || "";
+        var placeholder = container.querySelector(".pdpa-info-box");
+
+        if (consentGroups.indexOf(",C0004,") !== -1) {
+            placeholder.style.display = "none";
+            iframe.style.display = "block";
+
+            if (!iframe.src || iframe.src.indexOf("data-src") !== -1) {
+                iframe.src = iframe.getAttribute("data-src") + "?cache-buster=" + new Date().getTime();
+            }
+        } else {
+            forcePlaceholder(container);
+            iframe.setAttribute("data-src", iframe.src || iframe.getAttribute("data-src"));
+            iframe.removeAttribute("src");
+        }
+    }
+
+    function forcePlaceholder(container) {
+        var placeholder = container.querySelector(".pdpa-info-box");
+        var iframe = container.querySelector("iframe");
+
+        if (placeholder) {
+            placeholder.style.display = "flex";
+        }
+        if (iframe) {
+            iframe.style.display = "none";
+        }
+        updatePlaceholderLanguage(container);
+    }
+
+    function updatePlaceholderLanguage(container) {
+        var pageLang = document.documentElement.lang || "en";
+        var translations = {
+            en: {
+                title: "Sorry, this video cannot be displayed due to your current consent settings.",
+                desc: "To display this video, certain cookies need to be activated. Please update your cookie settings.",
+                btn: "Update Your Cookie Settings",
+            },
+            th: {
+                title: "ขออภัย วิดีโอนี้ไม่สามารถแสดงได้เนื่องจากการตั้งค่าความยินยอมของคุณ",
+                desc: "เพื่อแสดงวิดีโอนี้ จำเป็นต้องเปิดใช้งานคุกกี้บางรายการ โปรดอัปเดตการตั้งค่าคุกกี้",
+                btn: "อัปเดตการตั้งค่าคุกกี้ของคุณ",
+            },
+        };
+
+        var content = translations[pageLang] || translations["en"];
+        container.querySelector(".pdpa-info-box .title").textContent = content.title;
+        container.querySelector(".pdpa-info-box .desc").textContent = content.desc;
+        container.querySelector(".pdpa-info-box .btn").textContent = content.btn;
+    }
+
+    handleYouTubeConsent();
+}
+</script>

@@ -1,0 +1,15 @@
+<script>
+  try {
+    var placeholder = document.getElementById('youtube-video-placeholder');
+    if (placeholder) {
+      placeholder.innerHTML = 
+        '<iframe width="560" height="315" class="optanon-category-C0004 embed-responsive-item" ' +
+        'src="https://www.youtube-nocookie.com/embed/4OVDLjxep8Y?si=_LjW6DK-Gui7Vf2u" ' +
+        'title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+        'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>' +
+        '</iframe>';
+    }
+  } catch (error) {
+    console.error("Error initializing YouTube video:", error);
+  }
+</script>
