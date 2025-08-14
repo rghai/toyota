@@ -41,11 +41,26 @@ function OptanonWrapper() { }
  <div class="bg-white mx-3 mx-lg-6 p-3 p-lg-6 rounded-1">
  <div class="row mb-3">
  
- <!-- OneTrust Cookies List start -->
-<div id="ot-sdk-cookie-policy"></div>
-<!-- OneTrust Cookies List end -->
- 
- 
+<!-- OneTrust Privacy Notice start -->
+  <!-- Language Drop-down element that will control in which language the Privacy Notice is displayed -->
+  <div class="ot-privacy-notice-language-dropdown-container"></div>
+  <!-- Container in which the Privacy Notice will be rendered -->
+  <div id="otnotice-6345c475-564e-4456-a1a5-1ee21b57434a" class="otnotice"></div>
+
+  <script src="https://privacyportal-uatde-cdn.onetrust.com/privacy-notice-scripts/otnotice-1.0.min.js" type="text/javascript" charset="UTF-8" id="otprivacy-notice-script">
+      settings="eyJjb250ZW50QXBpVXJsIjoiaHR0cHM6Ly9wcml2YWN5cG9ydGFsLXVhdC10b3lvdGEtYXNpYS5teS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvY29udGVudCIsIm1ldGFkYXRhQXBpVXJsIjoiaHR0cHM6Ly9wcml2YWN5cG9ydGFsLXVhdC10b3lvdGEtYXNpYS5teS5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9lbnRlcnByaXNlcG9saWN5L2RpZ2l0YWxwb2xpY3kvbWV0YS1kYXRhIn0="
+    </script>
+
+  <script type="text/javascript" charset="UTF-8">
+      // To ensure external settings are loaded, use the Initialized promise:
+      OneTrust.NoticeApi.Initialized.then(function() {
+        OneTrust.NoticeApi.LoadNotices(["https://privacyportal-uatde-cdn.onetrust.com/storage-container/5871ce94-efa2-4c0a-8461-f27250c177b9/privacy-notices/6345c475-564e-4456-a1a5-1ee21b57434a/draft/privacynotice.json"]);
+      });
+    </script>
+
+  <!-- OneTrust Privacy Notice end -->
+
+
  </div>
  </div>
  </div>
