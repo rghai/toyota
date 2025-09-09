@@ -1,0 +1,7 @@
+<!-- OneTrust Cookies Consent Notice start for fixfitthailand.com -->
+
+<script src="https://cdn-apac.onetrust.com/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="0198e583-0787-7811-b1cb-b9efa5b12645" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for fixfitthailand.com -->
